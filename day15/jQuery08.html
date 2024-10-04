@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 이벤트2</title>
+</head>
+<body>
+    <div id="wrap"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // setTimeout() : 몇 초뒤에 함수 실행
+    // setInterval() : 몇 초마다 함수 실행
+    // clearInterval() : setInterval() 함수 중지
+
+    // setTimeout(()=>{
+    //     $("#wrap").append("<strong>나 등장😎</strong>")
+    // },3000)
+
+  const id = setInterval(()=>{
+        $("#wrap").append("<strong>나 등장😎</strong>")
+    },1000)
+    setTimeout(()=>{
+        clearInterval(id)
+    },5000)
+</script>
+</html>

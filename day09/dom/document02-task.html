@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스를 이용한 선택 실습</title>
+</head>
+<body>
+    <ul>
+        <li class="list">첫 번째 리스트</li>
+        <li class="list">두 번째 리스트</li>
+        <li class="list">세 번째 리스트</li>
+        <li class="list">네 번째 리스트</li>
+        <li class="list">다섯 번째 리스트</li>
+    </ul>
+</body>
+<script>
+    // 자바스크립트로 list의 클래스 이름으로 선택하여
+    // .list인 태그의 폰트 크기를 20px로 변경하고,
+    // ul태그의 style 중 display를 flex로 변경한다
+    // 단, 선택자는 list만 불러온다.
+    HTMLCollection.prototype.forEach = Array.prototype.forEach // prototype 을 이용해서 매서드를 추가한다.
+    const list = document.getElementsByClassName("list");
+    list.forEach((list)=>{
+        list.style.fontSize = "20px"; // 숫자 + px(stringType)
+        list.style.listStyle = "none"; //stringType으로 호출 
+    })
+    const ulStyle = document.getElementsByClassName("list")[0].parentElement; // list중 한개만 들고와야 parentElement 사용가능
+ 
+  ulStyle.style.display = "flex";
+  ulStyle.style.gap = "50px";
+ 
+
+       
+</script>
+</html>
